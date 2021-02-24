@@ -1,0 +1,5 @@
+
+Cognome Nome 999 non ha un file .jpg associato
+Cognome Nome 888 non ha un file .txt associato
+Cognome Nome 777 non ha un file .jpg associato
+Cognome Nome 777 non ha un file .txt associato
