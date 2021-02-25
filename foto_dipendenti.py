@@ -19,8 +19,16 @@ def main():
     # debug
     print('anagrafica_list:', anagrafica_list)
 
-    files_obj = files.Files(INPUT_PATH + 'foto/')
-    files_obj.rename(anagrafica_list, EXTENSIONS, OUTPUT_PATH)
+    files_obj = files.Files(INPUT_PATH + 'foto/', OUTPUT_PATH)
+    # files_obj.rename(anagrafica_list, EXTENSIONS)
+    for anagrafica in anagrafica_list:
+        codice_fiscale = anagrafica[0]
+        matricola = anagrafica[1]
+        nome_completo = anagrafica[2]
+
+        for ext in EXTENSIONS:
+            message = nome_completo + ' non ha un file ' + matricola + ext + ' associato'
+            files_obj.rename(matricola + ext, codice_fiscale + ext, message)
 
     files_name_calculate = files.get_files_list(OUTPUT_PATH)
 

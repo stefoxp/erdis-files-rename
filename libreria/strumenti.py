@@ -14,15 +14,3 @@ def print_wrapper(obj, mode: str = 'a', destination: str = "", encode: str = "ut
         file_out.close()
     else:
         print(obj)
-
-def normalize_list_of_strings(original_list: list) -> list:
-    result = []
-
-    for o in original_list:
-        o_normalized = o.replace('"', '')
-        o_normalized = o_normalized.replace("’", "'")
-        o_normalized = o_normalized.replace("à", "a")
-
-        result.append(o_normalized)
-
-    return result

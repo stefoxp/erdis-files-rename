@@ -1,5 +1,4 @@
 import csv
-from libreria import strumenti
 
 
 class Csv:
@@ -9,16 +8,16 @@ class Csv:
         self.field_delimiter = field_delimiter
 
     def file_to_list(self) -> list:
-            """
-            Trasforma il contenuto del file in una result_list di tuple
-            """
-            result_list = []
+        """
+        Trasforma il contenuto del file in una result_list di tuple
+        """
+        result_list = []
 
-            with open(self.file_input_path, encoding="utf8") as file_csv:
-                reader = csv.reader(file_csv, delimiter=self.field_delimiter)
+        with open(self.file_input_path, encoding="utf8") as file_csv:
+            reader = csv.reader(file_csv, delimiter=self.field_delimiter)
 
-                for row in reader:
-                    result_list.append(tuple(strumenti.normalize_list_of_strings(row)))
+            for row in reader:
+                result_list.append(tuple(row))
 
-            # rimuovo intestazione
-            return result_list[1:]
+        # rimuovo intestazione
+        return result_list[1:]

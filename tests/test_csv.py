@@ -14,11 +14,11 @@ class TestCsvFileToList:
 
         # add records
         self.records = [('XXXYYY75A62L500P', '999', 'Cognome Nome 999'),
-                    ('YYYXXX70B21L500B','888','Cognome Nome 888')]
+                        ('YYYXXX70B21L500B', '888', 'Cognome Nome 888')]
         for record in self.records:
             print_wrapper(';'.join(record), 'a', self.file_csv_test_path, 'utf-8')
-    
-    def test_filetolist_is_recordslist(self):
+
+    def test_file_to_list_is_records_list(self):
         csv_obj = Csv("dati_test/", "anagrafica_test_csv_file.csv", "log_test.txt", ";")
 
         assert csv_obj.file_to_list() == self.records
